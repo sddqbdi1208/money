@@ -36,10 +36,14 @@ document.addEventListener("DOMContentLoaded", () => {
       body: JSON.stringify({ tanggal, pemasukan, pengeluaran }),
       headers: { "Content-Type": "application/json" },
     })
-      .then((res) => res.text())
-      .then(() => {
-        alert("Data berhasil disimpan!");
-        location.reload();
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success) {
+          alert("Data berhasil disimpan!");
+          location.reload();
+        } else {
+          alert("Gagal menyimpan: " + data.message);
+        }
       })
       .catch((err) => {
         alert("Gagal menyimpan data");
@@ -49,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function ambilSaldo() {
-  fetch(scriptURL)
+  fetch(scriptURL + "?saldo=1")
     .then((res) => res.json())
     .then((data) => {
       const saldo = data.saldo || 0;
