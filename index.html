@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Money Management</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Money Management</h1>
+
+  <div id="saldo-container">
+    Saldo saat ini: <span id="saldo">Rp 0</span>
+  </div>
+
+  <form id="money-form">
+    <label>Tanggal:
+      <input type="date" id="tanggal" required />
+    </label>
+
+    <label>Pemasukan:
+      <input type="number" id="pemasukan" placeholder="Contoh: 100000" />
+    </label>
+
+    <div id="pengeluaran-list">
+      <label>Pengeluaran:
+        <div class="pengeluaran-item">
+          <input type="text" placeholder="Nama item" class="nama-pengeluaran" />
+          <input type="number" placeholder="Nominal" class="nominal-pengeluaran" />
+        </div>
+      </label>
+    </div>
+    <button type="button" id="tambah-pengeluaran">+ Tambah Pengeluaran</button>
+
+    <button type="submit">Simpan</button>
+  </form>
+
+  <script src="script.js"></script>
+</body>
+</html>

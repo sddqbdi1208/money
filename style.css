@@ -1,0 +1,38 @@
+body {
+  font-family: sans-serif;
+  max-width: 500px;
+  margin: auto;
+  padding: 1em;
+  background: #f4f4f4;
+}
+
+h1 {
+  text-align: center;
+}
+
+#saldo-container {
+  background: #e0ffe0;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+form label {
+  display: block;
+  margin-top: 1em;
+}
+
+input {
+  display: block;
+  width: 100%;
+  padding: 0.5em;
+  margin-top: 0.3em;
+}
+
+button {
+  margin-top: 1em;
+  padding: 0.5em 1em;
+  cursor: pointer;
+}
