@@ -31,12 +31,13 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
+    // Kirim data dalam bentuk URL-encoded (bukan JSON langsung) agar bebas dari CORS preflight
     const formData = new URLSearchParams();
     formData.append("data", JSON.stringify({ tanggal, pemasukan, pengeluaran }));
 
     fetch(scriptURL, {
       method: "POST",
-      body: formData, // ✅ Tidak pakai Content-Type JSON agar bebas preflight CORS
+      body: formData, // ✅ Tidak memicu preflight
     })
       .then((res) => res.json())
       .then((data) => {
