@@ -31,10 +31,12 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
+    const formData = new URLSearchParams();
+    formData.append("data", JSON.stringify({ tanggal, pemasukan, pengeluaran }));
+
     fetch(scriptURL, {
       method: "POST",
-      body: JSON.stringify({ tanggal, pemasukan, pengeluaran }),
-      headers: { "Content-Type": "application/json" },
+      body: formData, // ✅ Tidak pakai Content-Type JSON agar bebas preflight CORS
     })
       .then((res) => res.json())
       .then((data) => {
